@@ -1,0 +1,23 @@
+按要求编写以下代码
+
+配置文件 jdbc.properties
+  定义连接参数
+  
+配置文件 mybatis-config.xml
+  注册jdbc.properties
+  配置数据源
+  
+接口 OperatorMapper
+  +List<Operator> findAll()
+  
+映射文件 OperatorMapper.xml
+  <select> - 提供findAll的SQL语句
+  
+配置文件 mybatis-config.xml
+  <mapper> - 注册OperatorMapper.xml  
+  
+类 Main
+  1、创建SQL会话工厂
+  2、打开会话
+  3、通过会话获取OperatorMapper
+  4、调用其findAll方法，打印结果  
