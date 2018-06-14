@@ -3,4 +3,18 @@
   <groupId>learning</groupId>
   <artifactId>mybatistest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.4.6</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.h2database</groupId>
+		<artifactId>h2</artifactId>
+		<version>1.4.195</version>
+	</dependency>	
+  </dependencies>
 </project>

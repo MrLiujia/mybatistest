@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!--    namespace对应Mapper接口名                -->
+<mapper namespace="mybatistest.StudentMapper">
+<!-- 	    id对应Mapper方法名 -->
+	<select id="findAll" resultType="mybatistest.Student">
+		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
+		from STUDENT
+	</select>
+	
+<!-- 	<delete id=""></delete> -->
+</mapper>

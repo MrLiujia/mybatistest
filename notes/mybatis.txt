@@ -1,0 +1,11 @@
+Mybatis单独使用（不整合Spring）步骤：
+1、写配置文件mybatis-config.xml：数据源
+2、创建SqlSessionFactory（SQL会话工厂）
+
+注意：1 2步只需一次，3 4 5 6步需要为每个Mapper来一次（如StudentMapper、OperatorMapper）
+
+3、写Mapper接口和Mapper.xml（提供SQL语句）
+  注意：Mapper.java和Mapper.xml文件名必须一致，并且在同一包中
+4、在mybatis-config.xml注册Mapper
+5、通过会话获取Mapper（session.getMapper）
+6、调用Mapper方法做CRUD
