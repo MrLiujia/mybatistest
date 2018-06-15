@@ -9,3 +9,8 @@ Mybatis单独使用（不整合Spring）步骤：
 4、在mybatis-config.xml注册Mapper
 5、通过会话获取Mapper（session.getMapper）
 6、调用Mapper方法做CRUD
+
+Mybatis和Spring整合
+1、在AppConfig中定义@Bean SqlSessionFactoryBean（Mybatis的会话工厂）
+2、在AppConfig上注解@MapperScan（扫描指定包下的mapper）
+3、依赖Mapper：a. context.getBean；b. 注入Mapper到DAO或者Service

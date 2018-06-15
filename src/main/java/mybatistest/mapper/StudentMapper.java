@@ -1,6 +1,8 @@
-package mybatistest;
+package mybatistest.mapper;
 
 import java.util.List;
+
+import mybatistest.Student;
 
 public interface StudentMapper {
 	List<Student> findAll();
