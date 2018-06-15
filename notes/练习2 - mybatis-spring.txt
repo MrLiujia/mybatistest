@@ -1,0 +1,19 @@
+改写练习1：整合Spring
+
+Spring配置类 AppConfig
+  1、组件扫描
+  2、Mapper扫描
+  3、注册jdbc.properties
+  4、@Bean 数据源
+  5、@Bean 会话工厂
+  
+Mapper接口和映射xml
+  统一放到myproj.mapper包
+
+mybatis-config.xml
+  删除数据源配置和mapper注册
+  
+类 Main  
+  1、创建组件容器
+  2、获取组件OperatorMapper
+  3、调用其findAll方法，打印结果
