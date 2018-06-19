@@ -1,0 +1,14 @@
+在练习2的基础上，按要求编写以下代码
+
+接口 OperatorMapper
+  +Operator findOne(Integer id)
+  +void create(Operator operator)
+  +void delete(Integer id)
+  +void update(Operator operator)
+  
+SQL映射 OperatorMapper.xml
+  提供相应的语句
+  
+类 Main
+  测试CRUD  
+  
