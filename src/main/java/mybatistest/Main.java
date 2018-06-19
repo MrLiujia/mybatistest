@@ -12,6 +12,22 @@ public class Main {
 				new AnnotationConfigApplicationContext(AppConfig.class);
 		StudentMapper mapper = context.getBean(StudentMapper.class);
 		List<Student> list = mapper.findAll();
-		System.out.println(list);
+		System.out.println("findAll: " + list);
+		
+		System.out.println("findOne: " + mapper.findOne(4L));
+		System.out.println("findOne: " + mapper.findOne(3L)); // id不存在时返回null
+		
+		Student zhaoliu = new Student();
+		zhaoliu.setName("赵六");
+		zhaoliu.setGender(Gender.Male);
+		zhaoliu.setAge(30);
+		zhaoliu.setMajor("Hadoop");
+//		mapper.create(zhaoliu);
+		
+//		mapper.delete(6L);
+		
+		Student zhangsan = mapper.findOne(4L);
+//		zhangsan.setMajor("PS");
+//		mapper.update(zhangsan);
 	}
 }

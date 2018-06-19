@@ -12,5 +12,24 @@
 		from STUDENT
 	</select>
 	
-<!-- 	<delete id=""></delete> -->
+	<select id="findOne" resultType="mybatistest.Student">
+		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
+		from STUDENT
+		where S_ID = #{id}
+	</select>
+	
+	<insert id="create">
+		insert into STUDENT(S_NAME, S_GENDER, S_AGE, S_MAJOR) 
+		values(#{name}, #{gender}, #{age}, #{major})
+	</insert>
+	
+	<delete id="delete">
+		delete from STUDENT where S_ID = #{id}
+	</delete>
+	
+	<update id="update">
+		update STUDENT 
+		set S_NAME = #{name}, S_GENDER = #{gender}, S_AGE = #{age}, S_MAJOR = #{major} 
+		where S_ID = #{id}
+	</update>
 </mapper>
