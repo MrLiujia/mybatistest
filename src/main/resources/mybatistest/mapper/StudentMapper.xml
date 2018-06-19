@@ -18,7 +18,10 @@
 		where S_ID = #{id}
 	</select>
 	
-	<insert id="create">
+
+<!-- 	useGeneratedKeys告诉Mybatis获取自动生成的主键set到pojo上 -->
+<!-- 	keyColumn指定主键列名，keyProperty指定主键对应的pojo属性名  -->
+	<insert id="create" useGeneratedKeys="true" keyColumn="S_ID" keyProperty="id">
 		insert into STUDENT(S_NAME, S_GENDER, S_AGE, S_MAJOR) 
 		values(#{name}, #{gender}, #{age}, #{major})
 	</insert>

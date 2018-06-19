@@ -22,7 +22,8 @@ public class Main {
 		zhaoliu.setGender(Gender.Male);
 		zhaoliu.setAge(30);
 		zhaoliu.setMajor("Hadoop");
-//		mapper.create(zhaoliu);
+		mapper.create(zhaoliu);
+		System.out.println("create: #" + zhaoliu.getId());
 		
 //		mapper.delete(6L);
 		
