@@ -1,0 +1,19 @@
+在练习3的基础上，按要求编写以下代码
+
+接口 OperatorMapper
+  +void create(Operator operator)
+    需要将生成的主键set到pojo参数operator上
+  +List<Operator> findByRoleAndDisabled(String role, Boolean disabled)
+    根据角色和禁用状态查询管理员
+  +Integer count()
+    查询管理员数量
+  +List<String> findAllRoles()
+    查询所有角色名（去重、去null）
+
+  
+SQL映射 OperatorMapper.xml
+  提供相应的语句
+  
+类 Main
+  测试CRUD  
+  
