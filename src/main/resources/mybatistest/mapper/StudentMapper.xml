@@ -40,4 +40,12 @@
 		from STUDENT 
 		where S_GENDER = #{gender} and S_MAJOR = #{major}
 	</select>
+	
+	<select id="count" resultType="long">
+		select count(*) from STUDENT
+	</select>
+	
+	<select id="findAllMajors" resultType="string">
+		select distinct S_MAJOR from STUDENT where S_MAJOR is not null
+	</select>
 </mapper>

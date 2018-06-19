@@ -33,5 +33,8 @@ public class Main {
 		
 		List<Student> femaleJavaStudents = mapper.findByGenderAndMajor(Gender.Female, "Java");
 		System.out.println("findByGenderAndMajor: " + femaleJavaStudents);
+		
+		System.out.println("count: " + mapper.count());
+		System.out.println("findAllMajors: " + mapper.findAllMajors());
 	}
 }

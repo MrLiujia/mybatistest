@@ -25,4 +25,10 @@ public interface StudentMapper {
 	List<Student> findByGenderAndMajor(
 			@Param("gender") Gender gender, 
 			@Param("major") String major);
+	
+	// 单列情形1：结果集是单行单列
+	Long count();
+	
+	// 单列情形2：结果集是多行单列
+	List<String> findAllMajors();
 }
