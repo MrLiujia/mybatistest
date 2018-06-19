@@ -2,6 +2,9 @@ package mybatistest.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
+import mybatistest.Gender;
 import mybatistest.Student;
 
 public interface StudentMapper {
@@ -17,4 +20,9 @@ public interface StudentMapper {
 	void delete(Long id);
 	
 	void update(Student student);
+	
+	// 传参情形c：当有多个简单类型的参数时，需要给每个参数加@Param(参数名)才能在mapper.xml中使用#{参数名}取值
+	List<Student> findByGenderAndMajor(
+			@Param("gender") Gender gender, 
+			@Param("major") String major);
 }

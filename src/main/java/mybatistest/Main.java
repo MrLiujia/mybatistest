@@ -22,13 +22,16 @@ public class Main {
 		zhaoliu.setGender(Gender.Male);
 		zhaoliu.setAge(30);
 		zhaoliu.setMajor("Hadoop");
-		mapper.create(zhaoliu);
-		System.out.println("create: #" + zhaoliu.getId());
+//		mapper.create(zhaoliu);
+//		System.out.println("create: #" + zhaoliu.getId());
 		
 //		mapper.delete(6L);
 		
 		Student zhangsan = mapper.findOne(4L);
 //		zhangsan.setMajor("PS");
 //		mapper.update(zhangsan);
+		
+		List<Student> femaleJavaStudents = mapper.findByGenderAndMajor(Gender.Female, "Java");
+		System.out.println("findByGenderAndMajor: " + femaleJavaStudents);
 	}
 }

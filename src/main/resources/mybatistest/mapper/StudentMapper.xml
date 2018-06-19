@@ -17,7 +17,6 @@
 		from STUDENT
 		where S_ID = #{id}
 	</select>
-	
 
 <!-- 	useGeneratedKeys告诉Mybatis获取自动生成的主键set到pojo上 -->
 <!-- 	keyColumn指定主键列名，keyProperty指定主键对应的pojo属性名  -->
@@ -35,4 +34,10 @@
 		set S_NAME = #{name}, S_GENDER = #{gender}, S_AGE = #{age}, S_MAJOR = #{major} 
 		where S_ID = #{id}
 	</update>
+	
+	<select id="findByGenderAndMajor" resultType="mybatistest.Student">
+		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
+		from STUDENT 
+		where S_GENDER = #{gender} and S_MAJOR = #{major}
+	</select>
 </mapper>
