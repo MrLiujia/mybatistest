@@ -5,7 +5,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <!--    namespace对应Mapper接口名                -->
-<mapper namespace="exercise1.OperatorMapper">
+<mapper namespace="exercise1.mapper.OperatorMapper">
 <!-- 	    id对应Mapper方法名 -->
 	<select id="findAll" resultType="exercise1.Operator">
 <!-- 		结果列名对应pojo属性名不区分大小写 -->
