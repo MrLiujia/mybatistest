@@ -1,0 +1,14 @@
+在练习4的基础上，按要求编写以下代码
+
+接口 OperatorMapper
+  +List<Operator> findByUsernameLike(String username)
+    查询用户名包含关键字的管理员
+  +void batchDisable(List<Integer> ids, Boolean disabled)
+    批量禁用或启用管理员
+
+SQL映射 OperatorMapper.xml
+  提供相应的语句
+  
+类 Main
+  测试CRUD  
+  
