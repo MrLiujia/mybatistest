@@ -41,5 +41,18 @@ public class Main {
 		System.out.println("findByNameLike: " + mapper.findByNameLike("赵"));
 		
 //		mapper.batchDelete(Arrays.asList(7L, 11L));
+		
+		Student searchByName = new Student();
+		searchByName.setName("li");
+		System.out.println("search 1: " + mapper.search(searchByName));
+		
+		Student searchByMajor = new Student();
+		searchByMajor.setMajor("Java");
+		System.out.println("search 2: " + mapper.search(searchByMajor));
+		
+		Student searchByGenderAndMajor = new Student();
+		searchByGenderAndMajor.setGender(Gender.Female);
+		searchByGenderAndMajor.setMajor("Java");
+		System.out.println("search 3: " + mapper.search(searchByGenderAndMajor));
 	}
 }

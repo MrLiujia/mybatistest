@@ -63,4 +63,22 @@
 				#{id}
 			</foreach>
 	</delete>
+	
+<!-- 	where：当所有条件都不成立时，不会生成where关键字；当生成的条件以and或者or开头时会自动去掉 -->
+	<select id="search" resultType="mybatistest.Student">
+		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
+		from STUDENT	
+		<where> 
+		  <if test="name != null">
+		    <bind name="namePattern" value="name + '%'"></bind>
+		    S_NAME like #{namePattern}
+		  </if>
+		  <if test="gender != null">
+		    and S_GENDER = #{gender}
+		  </if>
+	      <if test="major != null">
+	        and S_MAJOR = #{major}
+	      </if>
+	    </where>
+	</select>
 </mapper>

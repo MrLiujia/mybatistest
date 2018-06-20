@@ -36,4 +36,6 @@ public interface StudentMapper {
 	List<Student> findByNameLike(@Param("name") String name);
 	
 	void batchDelete(@Param("ids") List<Long> ids);
+	
+	List<Student> search(Student student);
 }
