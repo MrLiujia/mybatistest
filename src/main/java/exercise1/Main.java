@@ -20,7 +20,16 @@ public class Main {
 		System.out.println("findByUsernameLike: " + mapper.findByUsernameLike("is"));
 		
 //		mapper.batchDisable(Arrays.asList(2), true); // 禁用
-		mapper.batchDisable(Arrays.asList(2), false); // 启用
+//		mapper.batchDisable(Arrays.asList(2), false); // 启用
+		
+		Operator searchByUsername = new Operator();
+		searchByUsername.setUsername("is");
+		System.out.println("search 1: " + mapper.search(searchByUsername));
+		
+		Operator searchByRoleAndDisabled = new Operator();
+		searchByRoleAndDisabled.setRole("HR");
+		searchByRoleAndDisabled.setDisabled(false);
+		System.out.println("search 2: " + mapper.search(searchByRoleAndDisabled));
 	}
 
 }

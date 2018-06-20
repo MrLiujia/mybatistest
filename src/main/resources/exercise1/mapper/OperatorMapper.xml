@@ -24,4 +24,20 @@
 			#{id}
 		</foreach>
 	</update>
+	
+	<select id="search" resultType="exercise1.Operator">
+		select ID, USERNAME, ROLE, DISABLED from OPERATORS 
+		<where>
+			<if test="username != null">
+				<bind name="usernamePattern" value="'%' + username + '%'"></bind>
+				USERNAME like #{usernamePattern}
+			</if>
+			<if test="role != null">
+				and ROLE = #{role}
+			</if>	
+			<if test="disabled != null">
+				and DISABLED = #{disabled}
+			</if>
+		</where> 			
+	</select>
 </mapper>

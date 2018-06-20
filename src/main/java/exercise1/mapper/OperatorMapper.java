@@ -14,4 +14,6 @@ public interface OperatorMapper {
 	void batchDisable(
 			@Param("ids") List<Integer> ids, 
 			@Param("disabled") Boolean disabled);
+	
+	List<Operator> search(Operator operator);
 }
