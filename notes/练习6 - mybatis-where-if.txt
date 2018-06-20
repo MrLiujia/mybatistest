@@ -1,0 +1,15 @@
+在练习5的基础上，按要求编写以下代码
+
+接口 OperatorMapper
+  +List<Operator> search(Operator operator)
+    动态多条件查询
+	  1. 用户名包含关键字（like）
+      2. 角色（=）
+	  3. 禁用状态（=）
+
+SQL映射 OperatorMapper.xml
+  提供相应的语句
+  
+类 Main
+  测试CRUD  
+  
