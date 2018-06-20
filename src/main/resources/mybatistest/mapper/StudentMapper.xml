@@ -56,4 +56,11 @@
 		from STUDENT	
 		where S_NAME like #{namePattern}
 	</select>
+	
+	<delete id="batchDelete">
+		delete from STUDENT where S_ID in 
+			<foreach collection="ids" item="id" open="(" separator="," close=")">
+				#{id}
+			</foreach>
+	</delete>
 </mapper>

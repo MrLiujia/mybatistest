@@ -1,5 +1,6 @@
 package mybatistest;
 
+import java.util.Arrays;
 import java.util.List;
 
 import mybatistest.mapper.StudentMapper;
@@ -38,5 +39,7 @@ public class Main {
 		System.out.println("findAllMajors: " + mapper.findAllMajors());
 		
 		System.out.println("findByNameLike: " + mapper.findByNameLike("赵"));
+		
+//		mapper.batchDelete(Arrays.asList(7L, 11L));
 	}
 }
