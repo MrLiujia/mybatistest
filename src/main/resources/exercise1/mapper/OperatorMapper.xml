@@ -12,5 +12,16 @@
 		select ID, USERNAME, ROLE, DISABLED from OPERATORS
 	</select>
 	
-<!-- 	<delete id=""></delete> -->
+	<select id="findByUsernameLike" resultType="exercise1.Operator">
+		<bind name="usernamePattern" value="'%' + username + '%'"></bind>
+		select ID, USERNAME, ROLE, DISABLED from OPERATORS 
+		where USERNAME like #{usernamePattern}
+	</select>
+	
+	<update id="batchDisable">
+		update OPERATORS set DISABLED = #{disabled} where ID in 
+		<foreach collection="ids" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</update>
 </mapper>
