@@ -31,4 +31,7 @@ public interface StudentMapper {
 	
 	// 单列情形2：结果集是多行单列
 	List<String> findAllMajors();
+	
+	// 注意：此处虽然符合传参情形a，但是因为name是用于OGNL表达式中（<bind value>），所以需要@Param注解
+	List<Student> findByNameLike(@Param("name") String name);
 }

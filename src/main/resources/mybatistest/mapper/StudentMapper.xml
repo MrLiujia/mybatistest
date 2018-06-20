@@ -48,4 +48,12 @@
 	<select id="findAllMajors" resultType="string">
 		select distinct S_MAJOR from STUDENT where S_MAJOR is not null
 	</select>
+	
+	<select id="findByNameLike" resultType="mybatistest.Student">
+<!-- 	name是变量名，value是变量值（OGNL表达式） -->
+		<bind name="namePattern" value="name + '%'"/>
+		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
+		from STUDENT	
+		where S_NAME like #{namePattern}
+	</select>
 </mapper>

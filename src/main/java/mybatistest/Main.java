@@ -36,5 +36,7 @@ public class Main {
 		
 		System.out.println("count: " + mapper.count());
 		System.out.println("findAllMajors: " + mapper.findAllMajors());
+		
+		System.out.println("findByNameLike: " + mapper.findByNameLike("赵"));
 	}
 }
