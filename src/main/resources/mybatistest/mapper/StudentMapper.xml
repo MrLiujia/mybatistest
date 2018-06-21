@@ -7,12 +7,12 @@
 <!--    namespace对应Mapper接口名                -->
 <mapper namespace="mybatistest.mapper.StudentMapper">
 <!-- 	    id对应Mapper方法名 -->
-	<select id="findAll" resultType="mybatistest.Student">
+	<select id="findAll" resultType="Student">
 		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
 		from STUDENT
 	</select>
 	
-	<select id="findOne" resultType="mybatistest.Student">
+	<select id="findOne" resultType="Student">
 		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
 		from STUDENT
 		where S_ID = #{id}
@@ -35,7 +35,7 @@
 		where S_ID = #{id}
 	</update>
 	
-	<select id="findByGenderAndMajor" resultType="mybatistest.Student">
+	<select id="findByGenderAndMajor" resultType="Student">
 		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
 		from STUDENT 
 		where S_GENDER = #{gender} and S_MAJOR = #{major}
@@ -49,7 +49,7 @@
 		select distinct S_MAJOR from STUDENT where S_MAJOR is not null
 	</select>
 	
-	<select id="findByNameLike" resultType="mybatistest.Student">
+	<select id="findByNameLike" resultType="Student">
 <!-- 	name是变量名，value是变量值（OGNL表达式） -->
 		<bind name="namePattern" value="name + '%'"/>
 		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
@@ -65,7 +65,7 @@
 	</delete>
 	
 <!-- 	where：当所有if都不成立时，不会生成where关键字；当生成的条件以and或者or开头时会自动去掉 -->
-	<select id="search" resultType="mybatistest.Student">
+	<select id="search" resultType="Student">
 		select S_ID id, S_NAME name, S_GENDER gender, S_AGE age, S_MAJOR major 
 		from STUDENT	
 		<where> 

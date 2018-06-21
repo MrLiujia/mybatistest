@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import mybatistest.mapper.StudentMapper;
+import mybatistest.pojo.Gender;
+import mybatistest.pojo.Student;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

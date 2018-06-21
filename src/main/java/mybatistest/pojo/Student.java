@@ -1,4 +1,4 @@
-package mybatistest;
+package mybatistest.pojo;
 
 public class Student {
 	private Long id; // 当表中的数据行可能无限增长时，id列最好用Long

@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import mybatistest.Gender;
-import mybatistest.Student;
+import mybatistest.pojo.Gender;
+import mybatistest.pojo.Student;
 
 public interface StudentMapper {
 	List<Student> findAll();

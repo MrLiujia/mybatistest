@@ -4,4 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+	<typeAliases>
+<!-- 	在mapper.xml中可以写pojo的简单类名，mybatis会自动去指定包下找类 -->
+		<package name="mybatistest.pojo" />
+	</typeAliases>
 </configuration>
