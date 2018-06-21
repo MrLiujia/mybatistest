@@ -1,0 +1,24 @@
+在图书管理ER中，按要求编写以下代码
+
+表 BOOK_COMMENTS
+  ID
+  BOOK_ID         外键列（引用BOOKS表的主键）
+  COMMENT         评论
+  
+pojo类 BookComment
+  -id: Long
+  -book: Book
+  -comment: String
+  +getter/setters
+
+mapper接口 BookCommentMapper
+  +BookComment findOne(Long id)
+  
+mapper.xml BookCommentMapper.xml
+  1、<select>提供SQL语句（只需查询评论和图书的书名）
+  2、<resultMap>映射结果
+  
+类 Main
+  1、创建Spring组件容器
+  2、获取组件BookCommentMapper
+  3、调用其findOne方法，打印出评论和图书名，如“COOL《红楼梦》”
