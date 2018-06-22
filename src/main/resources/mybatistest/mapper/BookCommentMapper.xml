@@ -9,9 +9,11 @@
 	<select id="findOne" resultMap="commentDetails">
 		select 
 		  c.ID COMMENT_ID, c.COMMENT COMMENT, 
-		  b.ID BOOK_ID, b.TITLE BOOK_TITLE, b.DESCRIPTION BOOK_DESCRIPTION 
+		  b.ID BOOK_ID, b.TITLE BOOK_TITLE, b.DESCRIPTION BOOK_DESCRIPTION,
+		  p.ID PUBLISHER_ID, p.NAME PUBLISHER_NAME, p.DESCRIPTION PUBLISHER_DESCRIPTION
 		from BOOK_COMMENTS c 
-		  inner join BOOKS b on c.BOOK_ID = b.ID  
+		  inner join BOOKS b on c.BOOK_ID = b.ID 
+		  inner join PUBLISHERS p on b.PUBLISHER_ID = p.ID 
 		where c.ID = #{id}
 	</select>
 	
@@ -19,11 +21,19 @@
 <!-- 	处理的是BOOK_COMMENTS表 -->
 		<id column="COMMENT_ID" property="id"/>
 		<result column="COMMENT" property="comment"/>
+<!-- 	对一关系BookComment.book: Book -->
 		<association property="book" javaType="Book">
 <!-- 		处理的是BOOKS表 -->
 			<id column="BOOK_ID" property="id"/>
 			<result column="BOOK_TITLE" property="title"/>
 			<result column="BOOK_DESCRIPTION" property="description"/>
+<!-- 		对一关系Book.publisher: Publisher -->
+			<association property="publisher" javaType="Publisher">
+<!-- 			处理的是PUBLISHERS表 -->
+				<id column="PUBLISHER_ID" property="id"></id>
+				<result column="PUBLISHER_NAME" property="name"/>
+				<result column="PUBLISHER_DESCRIPTION" property="description"/>
+			</association>
 		</association>		
 	</resultMap>
 </mapper>

@@ -15,7 +15,9 @@ public class BookCommentMapperTest {
 		BookCommentMapper mapper = context.getBean(BookCommentMapper.class);
 		
 		BookComment comment = mapper.findOne(1L);
-		System.out.println("findOne: " + String.format("%s《%s》", 
-				comment.getComment(), comment.getBook().getTitle()));
+		System.out.println("findOne: " + String.format("%s《%s》（%s）", 
+				comment.getComment(), 
+				comment.getBook().getTitle(),
+				comment.getBook().getPublisher().getName()));
 	}
 }
