@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!--    namespace对应Mapper接口名                -->
+<mapper namespace="mybatistest.mapper.BookCommentMapper">
+	<select id="findOne" resultMap="commentDetails">
+		select 
+		  c.ID COMMENT_ID, c.COMMENT COMMENT, 
+		  b.ID BOOK_ID, b.TITLE BOOK_TITLE, b.DESCRIPTION BOOK_DESCRIPTION 
+		from BOOK_COMMENTS c 
+		  inner join BOOKS b on c.BOOK_ID = b.ID  
+		where c.ID = #{id}
+	</select>
+	
+	<resultMap type="BookComment" id="commentDetails">
+<!-- 	处理的是BOOK_COMMENTS表 -->
+		<id column="COMMENT_ID" property="id"/>
+		<result column="COMMENT" property="comment"/>
+		<association property="book" javaType="Book">
+<!-- 		处理的是BOOKS表 -->
+			<id column="BOOK_ID" property="id"/>
+			<result column="BOOK_TITLE" property="title"/>
+			<result column="BOOK_DESCRIPTION" property="description"/>
+		</association>		
+	</resultMap>
+</mapper>
