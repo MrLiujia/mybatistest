@@ -1,0 +1,16 @@
+在图书管理ER中，按要求编写以下代码
+
+mapper接口 PublisherMapper
+  +Publisher findOne(Long id)
+  
+mapper.xml PublisherMapper.xml
+  1、<select>提供SQL语句（需查询出版社名字、简介及其所出版的图书的书名、作者）
+  2、<resultMap>映射结果
+  
+类 Main
+  1、创建Spring组件容器
+  2、获取组件PublisherMapper
+  3、调用其findOne方法，打印出版社及其图书，如
+    “Addison-Wesley Professional（出版社简介……）
+	  《Refactoring: Improving the Design of Existing Code》【Martin Fowler、Kent Beck】
+	  《Patterns of Enterprise Application Architecture》【Martin Fowler】”
