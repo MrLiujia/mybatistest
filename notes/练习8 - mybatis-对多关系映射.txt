@@ -1,0 +1,27 @@
+在图书管理ER中，按要求编写以下代码
+
+mapper接口 AuthorMapper
+  +Author findOne(Long id)
+  
+mapper.xml AuthorMapper.xml
+  1、<select>提供SQL语句（只需查询作者姓名、性别及其所写图书的书名）
+  2、<resultMap>映射结果
+  
+类 Main
+  1、创建Spring组件容器
+  2、获取组件AuthorMapper
+  3、调用其findOne方法，打印出作者姓名性别和图书名，如
+    “Martin Fowler[Male]
+	  《Refactoring: Improving the Design of Existing Code》
+	  《Patterns of Enterprise Application Architecture》”
+  
+----------------------------------------------------------------------
+  
+插入测试数据：  
+书名      Refactoring: Improving the Design of Existing Code
+作者      Martin Fowler and Kent Beck
+出版社    Addison-Wesley Professional
+
+书名      Patterns of Enterprise Application Architecture
+作者      Martin Fowler
+出版社    Addison-Wesley Professional
