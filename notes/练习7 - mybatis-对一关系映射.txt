@@ -22,7 +22,3 @@ mapper.xml BookCommentMapper.xml
   1、创建Spring组件容器
   2、获取组件BookCommentMapper
   3、调用其findOne方法，打印出评论和图书名，如“COOL《红楼梦》”
-
----------------------------------------------------------------
-
-insert into BOOK_COMMENTS(BOOK_ID, COMMENT) values (1, 'COOL');
