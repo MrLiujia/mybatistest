@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!--    namespace对应Mapper接口名                -->
+<mapper namespace="mybatistest.mapper.AuthorMapper">
+	<select id="findOne" resultMap="authorDetails">
+		select 
+		  a.ID AUTHOR_ID, a.NAME AUTHOR_NAME, a.GENDER AUTHOR_GENDER,
+		  b.ID BOOK_ID, b.TITLE BOOK_TITLE
+		from AUTHORS a 
+		  left join BOOK_AUTHORS ba on ba.AUTHOR_ID = a.ID
+		  inner join BOOKS b on ba.BOOK_ID = b.ID
+		where a.ID = #{id}
+	</select>
+	
+	<resultMap type="Author" id="authorDetails">
+		<id column="AUTHOR_ID" property="id"/>
+		<result column="AUTHOR_NAME" property="name"/>
+		<result column="AUTHOR_GENDER" property="gender"/>
+		<collection property="books" ofType="Book">
+			<id column="BOOK_ID" property="id"/>
+			<result column="BOOK_TITLE" property="title"/>
+		</collection>
+	</resultMap>
+</mapper>

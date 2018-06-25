@@ -72,4 +72,31 @@ insert into BOOK_AUTHORS(BOOK_ID, AUTHOR_ID) values
   (3, 5);
   
 insert into BOOK_COMMENTS(BOOK_ID, COMMENT) values (1, 'COOL');
+
+-----------------------------------------------------
+
+-- 练习8的测试数据：  
+-- 书名      Refactoring: Improving the Design of Existing Code
+-- 作者      Martin Fowler and Kent Beck
+-- 出版社    Addison-Wesley Professional
+
+-- 书名      Patterns of Enterprise Application Architecture
+-- 作者      Martin Fowler
+-- 出版社    Addison-Wesley Professional
+
+insert into PUBLISHERS(NAME) values('Addison-Wesley Professional');
+
+insert into AUTHORS(NAME, GENDER) values
+  ('Martin Fowler', 'Male'),
+  ('Kent Beck', 'Male');
+
+insert into BOOKS(TITLE, PUBLISHER_ID) values
+  ('Refactoring: Improving the Design of Existing Code', 3),
+  ('Patterns of Enterprise Application Architecture', 3);
+
+insert into BOOK_AUTHORS(BOOK_ID, AUTHOR_ID) values
+  (4, 6),
+  (4, 7),
+  (5, 6);
+  
   
