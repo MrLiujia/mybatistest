@@ -1,8 +1,6 @@
 package mybatistest;
 
-import mybatistest.mapper.BookMapper;
 import mybatistest.mapper.PublisherMapper;
-import mybatistest.pojo.Author;
 import mybatistest.pojo.Book;
 import mybatistest.pojo.Publisher;
 
@@ -16,14 +14,25 @@ public class PublisherMapperTest {
 		PublisherMapper mapper = context.getBean(PublisherMapper.class);
 		
 		Publisher publisher = mapper.findOne(3L);
+		System.out.println("findOne:");
+		printPublisher(publisher);
 		
-		System.out.println("findOne: " + String.format("%s（%s）", 
+		System.out.println();
+
+		System.out.println("findAll:");
+		for (Publisher p : mapper.findAll()) {
+			printPublisher(p);
+		}
+	}
+
+	private static void printPublisher(Publisher publisher) {
+		System.out.println(String.format("%s（%s）", 
 				publisher.getName(), 
 				publisher.getDescription() != null ? publisher.getDescription() : "无简介"));
-		
+
 		// 对多关系Publisher.books
 		for (Book book : publisher.getBooks()) {
-			System.out.print(String.format("《%s》", book.getTitle()));
+			System.out.print(String.format("\t《%s》", book.getTitle()));
 			String authors = "【";
 			for (int i = 0; i < book.getAuthors().size(); i++) {
 				// 对多关系Book.authors
