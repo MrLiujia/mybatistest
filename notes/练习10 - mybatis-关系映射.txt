@@ -1,0 +1,19 @@
+在图书管理ER中，在练习8的基础上，按要求编写以下代码
+
+mapper接口 AuthorMapper
+  +Author findOne(Long id)
+  +List<Author> findAll()
+  
+mapper.xml AuthorMapper.xml
+  1、<select>提供SQL语句（需查询作者姓名、性别、简介及其所著图书书名、简介、出版社名字）
+  2、<resultMap>映射结果（findOne和findAll使用同一个resultMap）
+  
+类 AuthorMapperTest
+  1、创建Spring组件容器
+  2、获取组件AuthorMapper
+  3、调用其findOne方法，打印作者详情，如
+    “Martin Fowler[Male]（作者简介）
+	  《Refactoring: Improving the Design of Existing Code》【Addison-Wesley Professional】（图书简介）
+	  《Patterns of Enterprise Application Architecture》【Addison-Wesley Professional】（图书简介）”  
+  4、调用其findAll方法，打印所有作者的详情
+  
