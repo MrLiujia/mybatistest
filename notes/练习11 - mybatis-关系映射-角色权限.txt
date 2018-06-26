@@ -1,0 +1,73 @@
+在角色权限ER中，按要求编写以下代码
+
+pojo类 Role
+  -id: Long
+  -name: String
+  -description: String
+  -permissions: List<Permission>
+  +getter/setters
+
+pojo类 Permission
+  -id: String
+  -name: String
+  -description: String
+
+pojo类 Operator
+  -id: Long
+  -username: String
+  -password: String
+  -disabled: Boolean
+  -role: Role
+  +getter/setters
+
+mapper接口 OperatorMapper
+  +Operator findOne(Long id)
+    查询管理员详情（id 用户名 密码 是否禁用 角色及其权限）
+  +List<Operator> findAll()
+    查询管理员列表（id 用户名 是否禁用 角色）
+  
+mapper.xml OperatorMapper.xml
+  提供语句和结果映射
+  
+mapper接口 RoleMapper
+  +List<Role> findAll()
+    查询角色列表（id 名字 描述 及其权限）
+
+mapper.xml RoleMapper.xml
+  提供语句和结果映射
+
+mapper接口 PermissionMapper
+  +List<Permission> findAll()
+    查询权限列表（id 名字 描述）
+
+mapper.xml PermissionMapper.xml
+  提供语句和结果映射
+
+类 RolePermissionMapperTest
+  1、创建Spring组件容器
+  2、获取上述mapper，调用其方法，打印结果，参考输出如下：
+
+------------------------------------------------------------------------
+
+1. OperatorMapper
+findOne:
+zhangsan【图书管理员】（#1 *** 启用 [图书读写、作者读写、出版社读写]）
+
+findAll:
+zhangsan【图书管理员】（#1 启用） 
+lisi    【图书管理员】（#2 启用）
+wangwu  【管理参观者】（#3 启用）
+
+2. RoleMapper
+findAll:
+图书管理员 【图书读写、作者读写、出版社读写】（#1 描述）
+管理参观者 【图书只读、作者只读、出版社只读】（#2 描述）
+
+3. PermissionMapper
+findAll:
+BOOK_RW            图书读写          描述
+BOOK_RO            图书只读
+AUTHOR_RW          作者读写
+AUTHOR_RO          作者只读
+PUBLISHER_RW       出版社读写
+PUBLISHER_RO       出版社只读
