@@ -15,10 +15,16 @@ public class AuthorMapperTest {
 		
 		Author author = mapper.findOne(6L);
 		System.out.println("findOne: " + 
-					String.format("%s[%s]", author.getName(), author.getGender()));
+					String.format("%s[%s]（%s）", 
+							author.getName(), 
+							author.getGender(),
+							author.getDescription()));
 		// 对多关系author.books
 		for (Book book : author.getBooks()) {
-			System.out.println(String.format("《%s》", book.getTitle()));
+			System.out.println(String.format("《%s》【%s】（%s）", 
+					book.getTitle(),
+					book.getPublisher().getName(),
+					book.getDescription()));
 		}
 	}
 }
