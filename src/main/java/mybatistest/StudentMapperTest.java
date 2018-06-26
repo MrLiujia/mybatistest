@@ -9,7 +9,7 @@ import mybatistest.pojo.Student;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class Main {
+public class StudentMapperTest {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context =
 				new AnnotationConfigApplicationContext(AppConfig.class);
