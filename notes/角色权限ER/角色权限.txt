@@ -3,7 +3,7 @@
 角色
   id
   名字
-  描述
+  描述（选填）
   
 权限
   id
@@ -49,6 +49,8 @@ c. 角色权限
 2                  PUBLISHER_RO
 
 d. 管理员
-id 用户名 密码 是否禁用 角色id
+id      用户名        密码      是否禁用 角色id
 -------------------------------
-          
+自增    zhangsan      ***       false    1
+        lisi          ***       false    1
+        wangwu        ***       false    2
